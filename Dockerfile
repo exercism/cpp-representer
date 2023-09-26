@@ -1,7 +1,8 @@
 FROM alpine:3.17
 
-# TODO: install packages required to run the representer
-RUN apk add --no-cache bash jq
+RUN apk add --no-cache bash jq python3 py3-pip
+RUN pip3 install --upgrade pip
+RUN pip3 install pygments
 
 WORKDIR /opt/representer
 COPY . .
